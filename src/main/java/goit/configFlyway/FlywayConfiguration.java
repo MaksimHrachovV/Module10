@@ -3,11 +3,11 @@ package goit.configFlyway;
 import org.flywaydb.core.Flyway;
 
 public class FlywayConfiguration {
-    public void dbStart(String connectUrl){
+    public void dbStart(){
         // Create the Flyway instance and point it to the database
         Flyway flyway = Flyway
                 .configure()
-                .dataSource(connectUrl, null, null)
+                .dataSource(StorageConstant.CONNECTION_URL, null, null)
                 .load();
 
         // Start the migration
